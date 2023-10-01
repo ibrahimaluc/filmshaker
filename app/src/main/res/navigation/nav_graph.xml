@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph.xml"
+    app:startDestination="@id/homeFragment">
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.filmshakerkotlin.ui.screen.home.HomeFragment"
+        android:label="HomeFragment"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_homeFragment_to_posterFragment"
+            app:destination="@id/posterFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/categoriesFragment"
+        android:name="com.example.filmshakerkotlin.ui.screen.categories.CategoriesFragment"
+        android:label="fragment_categories"
+        tools:layout="@layout/fragment_categories">
+        <action
+            android:id="@+id/action_categoriesFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment">
+            <argument
+                android:name="selectedMovie"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/dailyFragment"
+        android:name="com.example.filmshakerkotlin.ui.screen.daily.DailyFragment"
+        android:label="fragment_daily"
+        tools:layout="@layout/fragment_daily">
+        <action
+            android:id="@+id/action_dailyFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment">
+            <argument
+                android:name="selectedMovie"
+                app:argType="integer" />
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/laterFragment"
+        android:name="com.example.filmshakerkotlin.ui.screen.later.LaterFragment"
+        android:label="fragment_later"
+        tools:layout="@layout/fragment_later" />
+    <fragment
+        android:id="@+id/watchedFragment"
+        android:name="com.example.filmshakerkotlin.ui.screen.watched.WatchedFragment"
+        android:label="fragment_watched"
+        tools:layout="@layout/fragment_watched" />
+    <fragment
+        android:id="@+id/posterFragment"
+        android:name="com.example.filmshakerkotlin.ui.screen.poster.PosterFragment"
+        android:label="fragment_poster"
+        tools:layout="@layout/fragment_poster">
+        <action
+            android:id="@+id/action_posterFragment_to_movieDetailFragment"
+            app:destination="@id/movieDetailFragment" >
+        </action>
+    </fragment>
+    <fragment
+        android:id="@+id/movieDetailFragment"
+        android:name="com.example.filmshakerkotlin.ui.screen.moviedetail.MovieDetailFragment"
+        android:label="fragment_movie_detail"
+        tools:layout="@layout/fragment_movie_detail" >
+        <argument
+            android:name="selectedMovie"
+            app:argType="integer" />
+    </fragment>
+    <fragment
+        android:id="@+id/nowPlayingFragment"
+        android:name="com.example.filmshakerkotlin.ui.screen.categories.nowplaying.NowPlayingFragment"
+        android:label="NowPlayingFragment"
+        tools:layout="@layout/fragment_now_playing" />
+    <fragment
+        android:id="@+id/soonFragment"
+        android:name="com.example.filmshakerkotlin.ui.screen.categories.soon.SoonFragment"
+        android:label="SoonFragment"
+        tools:layout="@layout/fragment_soon" />
+    <fragment
+        android:id="@+id/trendingFragment"
+        android:name="com.example.filmshakerkotlin.ui.screen.categories.trending.TrendingFragment"
+        android:label="TrendingFragment"
+        tools:layout="@layout/fragment_trending" />
+</navigation>

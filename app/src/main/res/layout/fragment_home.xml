@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.screen.home.HomeFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/zeminRenk">
+
+            <ImageView
+                android:id="@+id/daireArkaSallaEkran"
+                android:layout_width="240dp"
+                android:layout_height="240dp"
+                android:background="@color/zeminRenk"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/sallaEkranAnimasyon"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:clickable="true"
+                android:padding="42dp"
+                android:scaleType="fitCenter"
+                app:lottie_autoPlay="true"
+                app:lottie_colorFilter="#FFFFFF"
+                app:lottie_loop="true"
+                app:lottie_rawRes="@raw/shake"
+                android:focusable="true" />
+
+            <LinearLayout
+                android:id="@+id/linearLayout"
+                android:layout_width="match_parent"
+                android:layout_height="0dp"
+                android:layout_marginTop="72dp"
+                android:background="@drawable/gradient"
+                android:gravity="center"
+                app:layout_constraintHeight_percent="0.10"
+                app:layout_constraintTop_toBottomOf="@id/daireArkaSallaEkran">
+
+                <TextView
+                    android:id="@+id/sallaText"
+                    style="@style/TextAppearance.AppCompat.Body1"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="@string/shake_message" />
+
+
+            </LinearLayout>
+
+<!--            <com.google.android.gms.ads.AdView-->
+<!--                android:id="@+id/adView"-->
+<!--                android:layout_width="0dp"-->
+<!--                android:layout_height="0dp"-->
+<!--                android:layout_alignParentBottom="true"-->
+<!--                android:layout_centerHorizontal="true"-->
+<!--                android:layout_marginStart="6dp"-->
+<!--                android:layout_marginTop="24dp"-->
+<!--                android:layout_marginEnd="6dp"-->
+<!--                android:layout_marginBottom="35dp"-->
+<!--                app:adSize="SMART_BANNER"-->
+<!--                app:adUnitId="orijinal kod gelcek"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toBottomOf="@+id/linearLayout"></com.google.android.gms.ads.AdView>-->
+
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+</layout>

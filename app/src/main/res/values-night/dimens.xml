@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="text_baslik">24sp</dimen>
+    <dimen name="buton_text">16sp</dimen>
+    <dimen name="kategori_ad">27sp</dimen>
+    <dimen name="tab_text_size">16sp</dimen>
+    <dimen name="tab_elevation">12sp</dimen>
+    <dimen name="_154sdp">154.00dp</dimen>
+    <dimen name="_116sdp">116.00dp</dimen>
+    <dimen name="_24sdp">24.00dp</dimen>
+</resources>

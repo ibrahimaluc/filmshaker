@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/homeFragment"
+        android:icon="@drawable/icon_home"
+        android:title="@string/title_home" />
+
+    <item
+        android:id="@+id/categoriesFragment"
+        android:icon="@drawable/icon_categories"
+        android:title="@string/title_categories" />
+
+    <item
+        android:id="@+id/dailyFragment"
+        android:icon="@drawable/icon_daily"
+        android:title="@string/title_daily" />
+
+    <item
+        android:id="@+id/laterFragment"
+        android:icon="@drawable/icon_later"
+        android:title="@string/title_later" />
+
+    <item
+        android:id="@+id/watchedFragment"
+        android:icon="@drawable/icon_watched"
+        android:title="@string/title_watched" />
+
+</menu>

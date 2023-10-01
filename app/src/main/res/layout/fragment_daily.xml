@@ -1,0 +1,137 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="movieDetail"
+            type="com.example.filmshakerkotlin.domain.model.MovieDetail" />
+
+    </data>
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/zeminRenk"
+        android:padding="16dp"
+        tools:context=".ui.screen.daily.DailyFragment">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/afisFilmAdi"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:ellipsize="end"
+                android:gravity="center"
+                android:maxLines="1"
+                android:text="@{movieDetail.title}"
+                android:textAppearance="@style/Baslik"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:text="@string/app_name" />
+
+            <RatingBar
+                android:id="@+id/afisRatingBar"
+                android:layout_width="wrap_content"
+                android:layout_height="45dp"
+                android:isIndicator="true"
+                android:numStars="5"
+                android:rating="@{movieDetail.voteAverage}"
+                android:scaleX="0.65"
+                android:scaleY="0.65"
+                android:stepSize="0.1"
+                android:theme="@style/RatingBar"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/afisFilmAdi" />
+
+            <com.airbnb.lottie.LottieAnimationView
+                android:id="@+id/lottieAnim"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:elevation="10dp"
+                android:scaleType="fitCenter"
+                app:lottie_autoPlay="true"
+                app:lottie_rawRes="@raw/confetti" />
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/randomFilmCard"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginTop="8dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintHeight_percent="0.68"
+                app:layout_constraintLeft_toLeftOf="parent"
+                app:layout_constraintRight_toRightOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/afisRatingBar"
+                app:layout_constraintWidth_percent="0.80">
+
+                <ImageView
+                    android:id="@+id/afisImageButton"
+                    android:getImage="@{movieDetail.posterPath}"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:clickable="true"
+                    android:contentDescription="@string/moviePoster"
+                    android:focusable="true"
+                    android:scaleType="fitXY"
+                    app:srcCompat="@drawable/ic_launcher_background" />
+
+                <com.airbnb.lottie.LottieAnimationView
+                    android:id="@+id/lottieKonfeti"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:elevation="10dp"
+                    android:scaleType="fitCenter"
+                    app:lottie_rawRes="@raw/confetti" />
+            </androidx.cardview.widget.CardView>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal"
+                android:paddingHorizontal="40dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/randomFilmCard"
+                app:layout_constraintVertical_bias="0.20">
+
+                <Button
+                    android:id="@+id/watchedButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_marginEnd="12dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/buton"
+                    android:text="@string/already_watched"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/buton_text"
+                    android:textStyle="normal" />
+
+                <Button
+                    android:id="@+id/laterButton"
+                    style="?android:attr/buttonBarButtonStyle"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="0.5"
+                    android:background="@drawable/buton_stroke"
+                    android:text="@string/watch_later"
+                    android:textAllCaps="false"
+                    android:textColor="#FFFFFF"
+                    android:textSize="@dimen/buton_text"
+                    android:textStyle="normal" />
+
+            </LinearLayout>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </FrameLayout>
+</layout>
