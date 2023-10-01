@@ -32,6 +32,7 @@ By clicking on any movie, you can access the detail screen, where you will find 
 <img align="left" src="https://github.com/ibrahimaluc/filmshaker/blob/main/readmeImages/home.png" width="250" height="530" />
 <img align="left" src="https://github.com/ibrahimaluc/filmshaker/blob/main/readmeImages/categories.png" width="250" height="530" />
 <img align="left" src="https://github.com/ibrahimaluc/filmshaker/blob/main/readmeImages/movie_detail.png" width="250" height="530" />
+<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
 <img align="left" src="https://github.com/ibrahimaluc/filmshaker/blob/main/readmeImages/daily.png" width="250" height="530" />
 <img align="left" src="https://github.com/ibrahimaluc/filmshaker/blob/main/readmeImages/later.png" width="250" height="530" />
 <img align="left" src="https://github.com/ibrahimaluc/filmshaker/blob/main/readmeImages/watched.png" width="250" height="530" />
