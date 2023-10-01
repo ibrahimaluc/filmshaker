@@ -18,6 +18,18 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        Properties properties = new Properties()
+        properties.load(project.rootProject.file("keys.properties").newDataInputStream())
+        buildConfigField "String", "API_KEY", "\"${properties.getProperty("API_KEY")}\""
+        buildConfigField "String", "BASE_URL", "\"${properties.getProperty("BASE_URL")}\""
+        buildConfigField "String", "LANGUAGE", "\"${properties.getProperty("LANGUAGE")}\""
+        buildConfigField "String", "ADD_KEY", "\"${properties.getProperty("ADD_KEY")}\""
+        buildConfigField "String", "ADD_APP_PROD_KEY", "\"${properties.getProperty("ADD_APP_PROD_KEY")}\""
+
+
+
+
     }
 
     buildTypes {
