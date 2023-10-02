@@ -8,7 +8,7 @@ import com.example.filmshakerkotlin.R
 import com.example.filmshakerkotlin.data.local.later.LaterEntity
 import com.example.filmshakerkotlin.databinding.LaterItemResultCardBinding
 
-class LaterMovieAdapter (
+class LaterMovieAdapter(
     private val watchedList: ArrayList<LaterEntity>,
 
     ) : RecyclerView.Adapter<LaterMovieAdapter.LaterViewHolder>() {

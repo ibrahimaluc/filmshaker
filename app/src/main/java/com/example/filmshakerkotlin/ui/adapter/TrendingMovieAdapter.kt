@@ -37,12 +37,13 @@ class TrendingMovieAdapter(
     override fun onBindViewHolder(holder: TrendingViewHolder, position: Int) {
         holder.binding.trending = trendingList[position]
         holder.binding.trending?.let { movieDetail ->
-            holder.binding.afisImageButton.setOnClickListener {
+            holder.binding.posterImageButton.setOnClickListener {
                 val selectedMovieId: Int? = movieDetail.id
                 if (selectedMovieId != null) {
                     val b = Bundle()
                     b.putInt("selectedMovie", selectedMovieId)
-                    it.findNavController().navigate(R.id.action_categoriesFragment_to_movieDetailFragment,b)
+                    it.findNavController()
+                        .navigate(R.id.action_categoriesFragment_to_movieDetailFragment, b)
                 }
             }
         }

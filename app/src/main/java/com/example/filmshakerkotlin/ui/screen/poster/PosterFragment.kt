@@ -20,7 +20,8 @@ import com.example.filmshakerkotlin.data.local.later.LaterEntity
 import com.example.filmshakerkotlin.data.local.watched.WatchedDatabase
 import com.example.filmshakerkotlin.data.local.watched.WatchedEntity
 import com.example.filmshakerkotlin.databinding.FragmentPosterBinding
-import com.google.android.gms.ads.interstitial.InterstitialAd
+import com.example.filmshakerkotlin.domain.model.MovieDetail
+
 import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.android.material.bottomsheet.BottomSheetBehavior
 import com.google.android.material.bottomsheet.BottomSheetDialog
@@ -37,6 +38,7 @@ class PosterFragment : BaseFragment<PosterViewModel, FragmentPosterBinding>(
     private var bottomNavigationView: BottomNavigationView? = null
     private lateinit var shakeListener: ShakeListener
     private lateinit var bottomSheetDialog: BottomSheetDialog
+    private var currentMovie: MovieDetail? = null
 
 
     override fun onCreateViewInvoke() {
@@ -49,7 +51,15 @@ class PosterFragment : BaseFragment<PosterViewModel, FragmentPosterBinding>(
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        viewModel.getRandMovies()
+
+
+
+        if (currentMovie != null) {
+            binding.movieDetail = currentMovie
+            binding.randomFilmCard.visibility = View.VISIBLE
+        } else {
+            viewModel.getRandMovies()
+        }
         bottomNavigationView = requireActivity().findViewById(R.id.nav_view)
         bottomNavigationView?.visibility = View.GONE
         posterButtonClick()
@@ -81,6 +91,7 @@ class PosterFragment : BaseFragment<PosterViewModel, FragmentPosterBinding>(
         shakeListener = ShakeListener(requireContext()) {
             shakeListener.startListening()
             bottomNavigationView?.visibility = View.INVISIBLE
+            currentMovie = null
             viewModel.getRandMovies()
         }
     }
@@ -88,17 +99,15 @@ class PosterFragment : BaseFragment<PosterViewModel, FragmentPosterBinding>(
     private fun posterButtonClick() {
         binding.afisImageButton.setOnClickListener {
             val selectedMovie = binding.movieDetail?.id
+            currentMovie = binding.movieDetail
             val action =
                 PosterFragmentDirections.actionPosterFragmentToMovieDetailFragment(selectedMovie!!)
             findNavController().navigate(action)
-
-
         }
     }
 
-
     private fun info() {
-        binding.afisInfoAcilisButton.setOnClickListener {
+        binding.posterInfo.setOnClickListener {
             showBottomSheet()
         }
     }
@@ -185,15 +194,20 @@ class PosterFragment : BaseFragment<PosterViewModel, FragmentPosterBinding>(
                     Toast.makeText(requireContext(), "Movie list is empty!", Toast.LENGTH_SHORT)
                         .show()
                 } else {
-                    val random = Random()
-                    val randomIndex = random.nextInt(movieList.size)
+                    if (currentMovie != null) {
+                        binding.movieDetail = currentMovie
+                        binding.randomFilmCard.visibility = View.VISIBLE
+                    } else {
 
-                    val selectedMovie = movieList[randomIndex]
-                    binding.movieDetail = selectedMovie
-                    binding.randomFilmCard.visibility = View.VISIBLE
-                    val animation = AnimationUtils.loadAnimation(context, R.anim.slide_in_left)
-                    binding.randomFilmCard.startAnimation(animation)
+                        val random = Random()
+                        val randomIndex = random.nextInt(movieList.size)
 
+                        val selectedMovie = movieList[randomIndex]
+                        binding.movieDetail = selectedMovie
+                        binding.randomFilmCard.visibility = View.VISIBLE
+                        val animation = AnimationUtils.loadAnimation(context, R.anim.slide_in_left)
+                        binding.randomFilmCard.startAnimation(animation)
+                    }
                 }
             }
         }

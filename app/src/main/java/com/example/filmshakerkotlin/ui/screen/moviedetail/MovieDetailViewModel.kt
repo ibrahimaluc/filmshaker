@@ -49,6 +49,7 @@ class MovieDetailViewModel @Inject constructor(
                 }.launchIn(this)
         }
     }
+
     fun getMovieAllDetail(movieId: Int) {
         job = viewModelScope.launch {
             movieRepository.getMovieAllDetail(movieId)
@@ -62,7 +63,7 @@ class MovieDetailViewModel @Inject constructor(
                         }
 
                         is Resource.Error -> {
-                            _detailState.value =MovieDetailState(
+                            _detailState.value = MovieDetailState(
                                 isLoading = false
                             )
                         }

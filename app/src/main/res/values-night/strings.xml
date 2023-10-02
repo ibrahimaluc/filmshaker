@@ -1,7 +1,8 @@
-<?xml version="1.0" encoding="utf-8"?>
 <resources>
+    <string name="app_name">FilmShaker</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_home">Home</string>
-    <string name="title_categories">Categories</string>
+    <string name="title_categories">Categories\t\t\t</string>
     <string name="title_daily">Daily</string>
     <string name="title_later">Later</string>
     <string name="title_watched">Watched</string>
@@ -10,12 +11,20 @@
     <string name="daily_fragment_text">This is daily fragment.</string>
     <string name="later_fragment_text">This is later fragment.</string>
     <string name="watched_fragment_text">This is watched fragment.</string>
+    <string name="poster_fragment_text">This is poster fragment.</string>
     <string name="shake_message">Shake your phone again to get a new film advice.</string>
     <string name="moviePoster">moviePoster</string>
-    <string name="movieName">movieName</string>
+    <string name="icerik">Earths future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankinds survival: Interstellar travel. A newly discovered wormhole in the far reaches of our solar system allows a team of astronauts to go where no man has gone before, a planet that may have the right environment to sustain human life.
+    Earths future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankinds survival: Interstellar travel. A newly discovered wormhole in the far reaches
+    Earths future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankinds survival: Interstellar travel. A newly discovered wormhole in the far reaches
+    Earths future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankinds survival: Interstellar travel. A newly discovered wormhole in the far reaches
+    Earths future has been riddled by disasters, famines, and droughts. There is only one way to ensure mankinds survival: Interstellar travel. A newly discovered wormhole in the far reaches
+    </string>
+    <string name="movieName">Movie Name</string>
     <string name="director">Director</string>
     <string name="imdb">Imdb</string>
     <string name="rate">Rate</string>
+    <string name="made">2014</string>
     <string name="year">Year</string>
     <string name="minute">Minute</string>
     <string name="length">100</string>
@@ -45,4 +54,6 @@
     <string name="revenue">Revenue</string>
     <string name="watched_movies">Watched Movies</string>
     <string name="later_movies">Later Movies</string>
+    <string name="shake_anim">Shake anim</string>
+
 </resources>

@@ -6,4 +6,4 @@ data class DailyState(
     val movieList: ArrayList<MovieDetail>? = arrayListOf(),
     val isLoading: Boolean? = true,
 
-)
+    )

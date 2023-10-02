@@ -15,7 +15,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/zeminRenk"
-        android:padding="16dp"
+        android:padding="@dimen/_16sdp"
         tools:context=".ui.screen.daily.DailyFragment">
 
         <androidx.constraintlayout.widget.ConstraintLayout
@@ -23,10 +23,10 @@
             android:layout_height="match_parent">
 
             <TextView
-                android:id="@+id/afisFilmAdi"
+                android:id="@+id/posterFilmName"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:ellipsize="end"
                 android:gravity="center"
                 android:maxLines="1"
@@ -38,9 +38,9 @@
                 tools:text="@string/app_name" />
 
             <RatingBar
-                android:id="@+id/afisRatingBar"
+                android:id="@+id/posterRatingBar"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/_45sdp"
                 android:isIndicator="true"
                 android:numStars="5"
                 android:rating="@{movieDetail.voteAverage}"
@@ -50,13 +50,13 @@
                 android:theme="@style/RatingBar"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/afisFilmAdi" />
+                app:layout_constraintTop_toBottomOf="@id/posterFilmName" />
 
             <com.airbnb.lottie.LottieAnimationView
                 android:id="@+id/lottieAnim"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:elevation="10dp"
+                android:elevation="@dimen/_10sdp"
                 android:scaleType="fitCenter"
                 app:lottie_autoPlay="true"
                 app:lottie_rawRes="@raw/confetti" />
@@ -65,22 +65,22 @@
                 android:id="@+id/randomFilmCard"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="8dp"
-                app:cardCornerRadius="16dp"
+                android:layout_marginTop="@dimen/_8sdp"
+                app:cardCornerRadius="@dimen/_16sdp"
                 app:layout_constraintHeight_percent="0.68"
                 app:layout_constraintLeft_toLeftOf="parent"
                 app:layout_constraintRight_toRightOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/afisRatingBar"
+                app:layout_constraintTop_toBottomOf="@id/posterRatingBar"
                 app:layout_constraintWidth_percent="0.80">
 
                 <ImageView
-                    android:id="@+id/afisImageButton"
-                    android:getImage="@{movieDetail.posterPath}"
+                    android:id="@+id/posterImageButton"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clickable="true"
                     android:contentDescription="@string/moviePoster"
                     android:focusable="true"
+                    android:getImage="@{movieDetail.posterPath}"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/ic_launcher_background" />
 
@@ -88,7 +88,7 @@
                     android:id="@+id/lottieKonfeti"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:elevation="10dp"
+                    android:elevation="@dimen/_10sdp"
                     android:scaleType="fitCenter"
                     app:lottie_rawRes="@raw/confetti" />
             </androidx.cardview.widget.CardView>
@@ -98,7 +98,7 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:paddingHorizontal="40dp"
+                android:paddingHorizontal="@dimen/_40sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/randomFilmCard"
                 app:layout_constraintVertical_bias="0.20">
@@ -107,8 +107,8 @@
                     android:id="@+id/watchedButton"
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_marginEnd="12dp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
                     android:layout_weight="0.5"
                     android:background="@drawable/buton"
                     android:text="@string/already_watched"
@@ -121,12 +121,12 @@
                     android:id="@+id/laterButton"
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
-                    android:layout_height="60dp"
+                    android:layout_height="@dimen/_60sdp"
                     android:layout_weight="0.5"
                     android:background="@drawable/buton_stroke"
                     android:text="@string/watch_later"
                     android:textAllCaps="false"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/buton_text"
                     android:textStyle="normal" />
 

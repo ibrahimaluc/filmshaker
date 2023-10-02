@@ -33,14 +33,7 @@ class WatchedMovieAdapter(
 
     override fun onBindViewHolder(holder: WatchedViewHolder, position: Int) {
         holder.binding.watched = watchedList[position]
-//        holder.binding.afisImageButton.setOnClickListener {
-//            val dialogFragment = RateFragment()
-//            val fragmentManager = (it.context as FragmentActivity).supportFragmentManager
-//            dialogFragment.show(fragmentManager, "RateFragment")
-//        }
 
     }
-
-
 }
 

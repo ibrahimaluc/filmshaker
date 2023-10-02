@@ -4,60 +4,55 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-        <variable
-            name="movieId"
-            type="Integer" />
 
         <variable
             name="trending"
             type="com.example.filmshakerkotlin.domain.model.trending.TrendingDetail" />
-
-
     </data>
 
-
     <androidx.cardview.widget.CardView
-        android:layout_width="180dp"
-        android:layout_height="300dp"
-        android:layout_margin="12dp"
-        android:layout_marginStart="8dp"
-        android:layout_marginEnd="8dp"
-        app:cardCornerRadius="16dp"
-        app:cardElevation="8dp">
+        android:layout_width="@dimen/_180sdp"
+        android:layout_height="@dimen/_300sdp"
+        android:layout_margin="@dimen/_8sdp"
+        app:cardCornerRadius="@dimen/_16sdp"
+        app:cardElevation="@dimen/_4sdp">
 
-        <LinearLayout
+        <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:background="@color/iki"
-            android:orientation="vertical">
+            android:background="@color/iki">
 
             <ImageView
-                android:id="@+id/afisImageButton"
-                android:getImage="@{trending.posterPath}"
-                android:layout_width="match_parent"
+                android:id="@+id/posterImageButton"
+                android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_weight="1"
                 android:clickable="true"
                 android:contentDescription="@string/moviePoster"
                 android:focusable="true"
+                android:getImage="@{trending.posterPath}"
                 android:scaleType="fitXY"
+                app:layout_constraintBottom_toTopOf="@+id/filmName"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
                 tools:srcCompat="@drawable/ic_launcher_background" />
 
             <TextView
-
-                android:id="@+id/filmNameTextView"
-                android:layout_width="match_parent"
+                android:id="@+id/filmName"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:ellipsize="end"
                 android:maxLines="1"
-                android:padding="8dp"
+                android:padding="@dimen/_8sdp"
                 android:text="@{trending.title}"
                 android:textAlignment="center"
                 android:textColor="@color/white"
-                android:textSize="16sp"
-                android:textStyle="bold" />
-
-        </LinearLayout>
+                android:textSize="@dimen/_16sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
 
     </androidx.cardview.widget.CardView>
 

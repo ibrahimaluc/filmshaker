@@ -1,6 +1,3 @@
-<?xml version="1.0" encoding="utf-8"?>
-
-
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
@@ -20,9 +17,9 @@
             android:id="@+id/toolbar"
             android:layout_width="match_parent"
             android:layout_height="?actionBarSize"
-            android:layout_marginTop="20dp"
-            app:title="@string/categories"
+            android:layout_marginTop="@dimen/_20sdp"
             app:navigationIcon="@drawable/ic_back_arrow"
+            app:title="@string/categories"
             app:titleTextAppearance="@style/Categories"
             app:titleTextColor="@android:color/white" />
 
@@ -33,21 +30,16 @@
             android:contentDescription="@string/tab_layout"
             android:textAllCaps="false"
             app:tabGravity="fill"
-            app:tabIndicatorAnimationMode="fade"
+            app:tabIndicatorAnimationMode="elastic"
             app:tabIndicatorColor="@color/gradient1"
             app:tabMode="fixed"
-            app:tabTextColor="@color/white">
-
-        </com.google.android.material.tabs.TabLayout>
+            app:tabTextColor="@color/white" />
 
         <androidx.viewpager2.widget.ViewPager2
             android:id="@+id/viewPager"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="?actionBarSize" />
-
-
+            android:layout_height="0dp"
+            android:layout_marginBottom="?actionBarSize"
+            android:layout_weight="1" />
     </LinearLayout>
-
-
 </layout>

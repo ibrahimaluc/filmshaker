@@ -21,7 +21,7 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:background="@color/zeminRenk"
-            android:elevation="4dp"
+            android:elevation="@dimen/_4sdp"
             app:title="@string/later_movies"
             app:navigationIcon="@drawable/ic_back_arrow"
             app:titleTextColor="@android:color/white"

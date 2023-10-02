@@ -19,7 +19,8 @@ class PosterViewModel @Inject constructor(
     private val movieRepository: MovieRepository
 ) : BaseViewModel() {
 
-    private val _state: MutableStateFlow<PosterState> = MutableStateFlow(PosterState(isLoading = false))
+    private val _state: MutableStateFlow<PosterState> =
+        MutableStateFlow(PosterState(isLoading = false))
     val state: StateFlow<PosterState> get() = _state
 
     fun getRandMovies() {
@@ -34,12 +35,14 @@ class PosterViewModel @Inject constructor(
                             )
 
                         }
+
                         is Resource.Error -> {
                             _state.value = state.value.copy(
                                 isLoading = false
                             )
 
                         }
+
                         is Resource.Loading -> {
                             _state.value = state.value.copy(
                                 isLoading = true

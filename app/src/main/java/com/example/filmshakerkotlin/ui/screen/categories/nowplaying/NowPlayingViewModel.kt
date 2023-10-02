@@ -37,6 +37,7 @@ class NowPlayingViewModel @Inject constructor(
                             isLoading = false
                         )
                     }
+
                     is Resource.Error -> {
                         val errorMessage = it.message ?: "Unknown error"
                         Log.e("MovieRepository", errorMessage)
@@ -45,6 +46,7 @@ class NowPlayingViewModel @Inject constructor(
                             isLoading = false
                         )
                     }
+
                     is Resource.Loading -> {
                         _state.value = state.value.copy(
                             isLoading = true

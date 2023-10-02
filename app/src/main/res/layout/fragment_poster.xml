@@ -25,9 +25,9 @@
             android:layout_height="wrap_content">
 
             <androidx.appcompat.widget.Toolbar
-                android:id="@+id/main_toolbar"
+                android:id="@+id/toolBar"
                 android:layout_width="match_parent"
-                android:layout_height="50dp"
+                android:layout_height="@dimen/_50sdp"
                 android:background="@color/zeminRenk"
                 app:titleTextColor="@color/zeminRenk">
 
@@ -36,10 +36,10 @@
                     android:layout_height="wrap_content">
 
                     <Button
-                        android:id="@+id/afisInfoAcilisButton"
-                        android:layout_width="48dp"
+                        android:id="@+id/posterInfo"
+                        android:layout_width="@dimen/_48sdp"
                         android:layout_height="48dp"
-                        android:layout_marginEnd="16dp"
+                        android:layout_marginEnd="@dimen/_16sdp"
                         android:alpha="0.75"
                         android:background="@drawable/ic_info_24"
                         android:contentDescription="@string/infoButton"
@@ -59,7 +59,7 @@
                 android:id="@+id/afisFilmAdi"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="50dp"
+                android:layout_marginTop="@dimen/_50sdp"
                 android:ellipsize="end"
                 android:genreIdsToString="@{movieDetail.genreIds}"
                 android:gravity="center"
@@ -73,7 +73,7 @@
             <RatingBar
                 android:id="@+id/afisRatingBar"
                 android:layout_width="wrap_content"
-                android:layout_height="45dp"
+                android:layout_height="@dimen/_45sdp"
                 android:isIndicator="true"
                 android:numStars="5"
                 android:rating="@{movieDetail.voteAverage}"
@@ -91,7 +91,7 @@
                 android:id="@+id/lottieKonfeti"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:elevation="10dp"
+                android:elevation="@dimen/_10sdp"
                 android:scaleType="fitCenter"
                 app:lottie_autoPlay="true"
                 app:lottie_rawRes="@raw/confetti" />
@@ -100,7 +100,7 @@
                 android:id="@+id/randomFilmCard"
                 android:layout_width="0dp"
                 android:layout_height="0dp"
-                android:layout_marginTop="8dp"
+                android:layout_marginTop="@dimen/_8sdp"
                 android:visibility="invisible"
                 app:cardCornerRadius="16dp"
                 app:layout_constraintHeight_percent="0.68"
@@ -111,12 +111,12 @@
 
                 <ImageView
                     android:id="@+id/afisImageButton"
-                    android:getImage="@{movieDetail.posterPath}"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:clickable="true"
                     android:contentDescription="@string/poster_view"
                     android:focusable="true"
+                    android:getImage="@{movieDetail.posterPath}"
                     android:scaleType="fitXY"
                     app:srcCompat="@drawable/ic_launcher_background" />
             </androidx.cardview.widget.CardView>
@@ -126,7 +126,7 @@
                 android:layout_height="0dp"
                 android:gravity="center"
                 android:orientation="horizontal"
-                android:paddingHorizontal="40dp"
+                android:paddingHorizontal="@dimen/_40sdp"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintTop_toBottomOf="@+id/randomFilmCard"
                 app:layout_constraintVertical_bias="0.40">
@@ -135,13 +135,13 @@
                     android:id="@+id/watchedButton"
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
-                    android:layout_height="60dp"
-                    android:layout_marginEnd="12dp"
+                    android:layout_height="@dimen/_60sdp"
+                    android:layout_marginEnd="@dimen/_12sdp"
                     android:layout_weight="0.5"
                     android:background="@drawable/buton"
                     android:text="@string/already_watched"
                     android:textAllCaps="false"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/buton_text"
                     android:textStyle="normal" />
 
@@ -149,12 +149,12 @@
                     android:id="@+id/laterButton"
                     style="?android:attr/buttonBarButtonStyle"
                     android:layout_width="0dp"
-                    android:layout_height="60dp"
+                    android:layout_height="@dimen/_60sdp"
                     android:layout_weight="0.5"
                     android:background="@drawable/buton_stroke"
                     android:text="@string/watch_later"
                     android:textAllCaps="false"
-                    android:textColor="#FFFFFF"
+                    android:textColor="@color/white"
                     android:textSize="@dimen/buton_text"
                     android:textStyle="normal" />
 

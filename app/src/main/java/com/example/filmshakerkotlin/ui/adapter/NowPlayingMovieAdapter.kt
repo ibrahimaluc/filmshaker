@@ -38,12 +38,13 @@ class NowPlayingMovieAdapter(
         holder.binding.soon = nowPlayingList[position]
 
         holder.binding.soon?.let { movieDetail ->
-            holder.binding.afisImageButton.setOnClickListener {
+            holder.binding.posterImageButton.setOnClickListener {
                 val selectedMovieId: Int? = movieDetail.id
                 if (selectedMovieId != null) {
                     val b = Bundle()
                     b.putInt("selectedMovie", selectedMovieId)
-                    it.findNavController().navigate(R.id.action_categoriesFragment_to_movieDetailFragment,b)
+                    it.findNavController()
+                        .navigate(R.id.action_categoriesFragment_to_movieDetailFragment, b)
                 }
             }
         }

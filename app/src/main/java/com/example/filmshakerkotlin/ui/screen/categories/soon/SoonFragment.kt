@@ -50,8 +50,6 @@ class SoonFragment : BaseFragment<SoonViewModel, FragmentSoonBinding>(
                 } else {
                     soonMovieAdapter = SoonMovieAdapter(soonList, fragmentManager)
                     binding.recyclerView.adapter = soonMovieAdapter
-
-
                 }
             }
         }

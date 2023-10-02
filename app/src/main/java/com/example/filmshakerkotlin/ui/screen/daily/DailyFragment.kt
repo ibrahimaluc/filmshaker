@@ -54,7 +54,7 @@ class DailyFragment : BaseFragment<DailyViewModel, FragmentDailyBinding>(
     }
 
     private fun posterButtonClick() {
-        binding.afisImageButton.setOnClickListener {
+        binding.posterImageButton.setOnClickListener {
             val bundle = Bundle()
             val selectedMovie = binding.movieDetail?.id ?: return@setOnClickListener
             bundle.putInt("selectedMovie", selectedMovie)
