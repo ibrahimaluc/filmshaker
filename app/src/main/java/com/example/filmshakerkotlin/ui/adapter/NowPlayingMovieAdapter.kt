@@ -1,4 +1,4 @@
-package com.example.filmshakerkotlin.ui.screen.categories.nowplaying
+package com.example.filmshakerkotlin.ui.adapter
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -10,7 +10,6 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.filmshakerkotlin.R
 import com.example.filmshakerkotlin.databinding.ItemResultCardBinding
 import com.example.filmshakerkotlin.domain.model.MovieDetail
-import com.example.filmshakerkotlin.ui.screen.moviedetail.MovieDetailFragment
 
 class NowPlayingMovieAdapter(
     private val nowPlayingList: ArrayList<MovieDetail>,

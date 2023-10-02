@@ -7,11 +7,10 @@ import androidx.fragment.app.FragmentManager
 import androidx.lifecycle.Lifecycle
 import androidx.lifecycle.lifecycleScope
 import androidx.lifecycle.repeatOnLifecycle
-import com.example.filmshakerkotlin.R
 import com.example.filmshakerkotlin.core.base.BaseFragment
 import com.example.filmshakerkotlin.databinding.FragmentSoonBinding
 import com.example.filmshakerkotlin.domain.model.MovieDetail
-import com.example.filmshakerkotlin.ui.screen.moviedetail.MovieDetailFragment
+import com.example.filmshakerkotlin.ui.adapter.SoonMovieAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

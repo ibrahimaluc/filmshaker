@@ -10,6 +10,7 @@ import androidx.lifecycle.repeatOnLifecycle
 import com.example.filmshakerkotlin.core.base.BaseFragment
 import com.example.filmshakerkotlin.databinding.FragmentNowPlayingBinding
 import com.example.filmshakerkotlin.domain.model.MovieDetail
+import com.example.filmshakerkotlin.ui.adapter.NowPlayingMovieAdapter
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collectLatest
 import kotlinx.coroutines.launch

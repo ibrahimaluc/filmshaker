@@ -1,17 +1,12 @@
-package com.example.filmshakerkotlin.ui.screen.watched
+package com.example.filmshakerkotlin.ui.adapter
 
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.Toast
 import androidx.databinding.DataBindingUtil
-import androidx.fragment.app.FragmentActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.filmshakerkotlin.R
 import com.example.filmshakerkotlin.data.local.watched.WatchedEntity
 import com.example.filmshakerkotlin.databinding.WatchedItemResultCardBinding
-import com.example.filmshakerkotlin.ui.screen.RateFragment
-import kotlin.coroutines.coroutineContext
 
 
 class WatchedMovieAdapter(
@@ -36,7 +31,7 @@ class WatchedMovieAdapter(
         return watchedList.size
     }
 
-    override fun onBindViewHolder(holder: WatchedMovieAdapter.WatchedViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: WatchedViewHolder, position: Int) {
         holder.binding.watched = watchedList[position]
 //        holder.binding.afisImageButton.setOnClickListener {
 //            val dialogFragment = RateFragment()

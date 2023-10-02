@@ -12,6 +12,7 @@ import com.example.filmshakerkotlin.R
 import com.example.filmshakerkotlin.data.local.watched.WatchedDatabase
 import com.example.filmshakerkotlin.data.local.watched.WatchedEntity
 import com.example.filmshakerkotlin.databinding.FragmentWatchedBinding
+import com.example.filmshakerkotlin.ui.adapter.WatchedMovieAdapter
 import kotlinx.coroutines.launch
 
 

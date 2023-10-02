@@ -11,7 +11,7 @@ import com.example.filmshakerkotlin.R
 import com.example.filmshakerkotlin.data.local.later.LaterDatabase
 import com.example.filmshakerkotlin.data.local.later.LaterEntity
 import com.example.filmshakerkotlin.databinding.FragmentLaterBinding
-import com.example.filmshakerkotlin.ui.screen.watched.WatchedMovieAdapter
+import com.example.filmshakerkotlin.ui.adapter.LaterMovieAdapter
 import kotlinx.coroutines.launch
 
 class LaterFragment : Fragment() {

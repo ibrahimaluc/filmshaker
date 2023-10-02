@@ -1,4 +1,4 @@
-package com.example.filmshakerkotlin.ui.screen.later
+package com.example.filmshakerkotlin.ui.adapter
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
@@ -30,7 +30,7 @@ class LaterMovieAdapter (
         return watchedList.size
     }
 
-    override fun onBindViewHolder(holder: LaterMovieAdapter.LaterViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: LaterViewHolder, position: Int) {
         holder.binding.later = watchedList[position]
 
 
