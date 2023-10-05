@@ -45,5 +45,3 @@ By clicking on any movie, you can access the detail screen, where you will find 
   <img  src="https://github.com/ibrahimaluc/filmshaker/blob/main/readmeImages/mvvm_flow_uistate.png" alt="Architecture" width="800" height="400" />
 </p>
 
-## Google Play
-https://play.google.com/store/apps/details?id=com.netabis.filmshaker&hl=tr&gl=US
