@@ -18,38 +18,51 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
+    }
+    productFlavors {
+        dev {
+            dimension "environment"
+            applicationId "com.example.filmshakerkotlin"
+            buildConfigField("String", 'BASE_URL', '"https://api.themoviedb.org/3/"')
+            buildConfigField("String", 'API_KEY', '"7dce55d21a5c34fb38ae9ec2d075f4b3"')
+            buildConfigField("String", 'LANGUAGE', '"en-US"')
+            buildConfigField("String", 'ADD_KEY', '"ca-app-pub-3331567690272175/7748279532"')
 
-        Properties properties = new Properties()
-        properties.load(project.rootProject.file("keys.properties").newDataInputStream())
-        buildConfigField "String", "API_KEY", "\"${properties.getProperty("API_KEY")}\""
-        buildConfigField "String", "BASE_URL", "\"${properties.getProperty("BASE_URL")}\""
-        buildConfigField "String", "LANGUAGE", "\"${properties.getProperty("LANGUAGE")}\""
-        buildConfigField "String", "ADD_KEY", "\"${properties.getProperty("ADD_KEY")}\""
-        buildConfigField "String", "ADD_APP_PROD_KEY", "\"${properties.getProperty("ADD_APP_PROD_KEY")}\""
+            manifestPlaceholders = [adsMainId: "ca-app-pub-3331567690272175~5169771241"]
+        }
+        live {
+            dimension "environment"
+            applicationId "com.example.filmshakerkotlin"
+            buildConfigField("String", 'BASE_URL', '"https://api.themoviedb.org/3/"')
+            buildConfigField("String", 'API_KEY', '"7dce55d21a5c34fb38ae9ec2d075f4b3"')
+            buildConfigField("String", 'LANGUAGE', '"en-US"')
+            buildConfigField("String", 'ADD_KEY', '"ca-app-pub-3331567690272175/7748279532"')
 
+            manifestPlaceholders = [adsMainId: "ca-app-pub-3331567690272175~3883140424"]
 
-
-
+        }
     }
 
     buildTypes {
         release {
-            minifyEnabled true
+            minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
-    buildFeatures{
+    buildFeatures {
+        buildConfig = true
         dataBinding true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+    flavorDimensions "environment"
     kotlinOptions {
         jvmTarget = '1.8'
     }
 }
-
 
 
 dependencies {
@@ -101,11 +114,6 @@ dependencies {
     //roomdb
     implementation 'androidx.room:room-ktx:2.4.0'
     kapt 'androidx.room:room-compiler:2.4.0'
-
-
-
-
-
 
 
 }
